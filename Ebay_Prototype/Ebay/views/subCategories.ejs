@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>eBay | Home</title>
+<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+<link rel="stylesheet"
+	href="//code.`jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<script src="../Scripts/home.js"></script>
+</head>
+<body>
+	<div class="dashboard-header"><%- include header.ejs %></div>
+
+
+	<div class="button-container">
+		<% var count=0; var catCount = 0; %>
+
+		<%category.forEach(function(item){ %> <% if(type ==
+		category[catCount].name){ if(subCategories[catCount] != null){
+
+		subCategories[catCount].forEach(function(item) { if(count<4) { %> 
+		
+		
+		<form action="/showProductsBySubCategory" method="get"  >
+		<div>
+		  
+		 <input type="image" value="submit" name="submit" src="<%=item.image%>" height=398px width=49.5% >
+		  <input type="hidden" name="subCategoryId" value="<%=item.subCategoryId%>">
+		  </div>
+</form>
+
+
+
+
+		<%} else { %> 		<form action="/showProductsBySubCategory" method="get"  >
+		<div>
+		  
+		 <input type="image" value="submit" name="submit" src="<%=item.image%>" height=398px width=49.5% >
+		  <input type="hidden" name="subCategoryId" value="<%=item.subCategoryId%>">
+		  </div>
+</form>
+
+			
+			 <%} count++;});}} catCount++ });%>
+
+
+
+
+
+	</div>
+	<%- include footer.ejs %>
+</body>
+</html>
