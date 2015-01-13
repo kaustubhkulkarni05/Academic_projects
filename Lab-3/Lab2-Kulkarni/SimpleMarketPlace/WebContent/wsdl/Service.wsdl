@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://Connection" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://Connection" xmlns:intf="http://Connection" xmlns:tns1="http://DAO" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://Connection" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://DAO"/>
+   <element name="updateCategory">
+    <complexType>
+     <sequence>
+      <element name="oldCategoryName" type="xsd:string"/>
+      <element name="newCategoryName" type="xsd:string"/>
+      <element name="categoryDescription" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateCategoryResponse">
+    <complexType>
+     <sequence>
+      <element name="updateCategoryReturn" type="tns1:CategoryName"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="addCategory">
+    <complexType>
+     <sequence>
+      <element name="categoryName" type="xsd:string"/>
+      <element name="categoryDescription" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addCategoryResponse">
+    <complexType>
+     <sequence>
+      <element name="addCategoryReturn" type="tns1:CategoryName"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteCategory">
+    <complexType>
+     <sequence>
+      <element name="categoryName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteCategoryResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteCategoryReturn" type="tns1:CategoryName"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addComments">
+    <complexType>
+     <sequence>
+      <element name="reviwer_name" type="xsd:string"/>
+      <element name="description" type="xsd:string"/>
+      <element name="rating" type="xsd:string"/>
+      <element name="review" type="xsd:string"/>
+      <element name="Element" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addCommentsResponse">
+    <complexType>
+     <sequence>
+      <element name="addCommentsReturn" type="tns1:CategoryDisplay"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="signUp">
+    <complexType>
+     <sequence>
+      <element name="fname" type="xsd:string"/>
+      <element name="lname" type="xsd:string"/>
+      <element name="uname" type="xsd:string"/>
+      <element name="pwd" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="signUpResponse">
+    <complexType>
+     <sequence>
+      <element name="signUpReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="homePage">
+    <complexType/>
+   </element>
+   <element name="homePageResponse">
+    <complexType>
+     <sequence>
+      <element name="homePageReturn" type="tns1:CategoryName"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="signIn">
+    <complexType>
+     <sequence>
+      <element name="uname" type="xsd:string"/>
+      <element name="pwd" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="signInResponse">
+    <complexType>
+     <sequence>
+      <element name="signInReturn" type="tns1:CategoryDisplay"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="displayCategory">
+    <complexType/>
+   </element>
+   <element name="displayCategoryResponse">
+    <complexType>
+     <sequence>
+      <element name="displayCategoryReturn" type="tns1:CategoryName"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteComments">
+    <complexType>
+     <sequence>
+      <element name="reviwer_name" type="xsd:string"/>
+      <element name="Element" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteCommentsResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteCommentsReturn" type="tns1:CategoryDisplay"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateComments">
+    <complexType>
+     <sequence>
+      <element name="reviwer_name" type="xsd:string"/>
+      <element name="description" type="xsd:string"/>
+      <element name="rating" type="xsd:string"/>
+      <element name="review" type="xsd:string"/>
+      <element name="Element" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateCommentsResponse">
+    <complexType>
+     <sequence>
+      <element name="updateCommentsReturn" type="tns1:CategoryDisplay"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="showAllCategory">
+    <complexType/>
+   </element>
+   <element name="showAllCategoryResponse">
+    <complexType>
+     <sequence>
+      <element name="showAllCategoryReturn" type="tns1:CategoryAll"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://DAO" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://Connection"/>
+   <complexType name="CategoryName">
+    <sequence>
+     <element name="categoryDescription" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="categoryName" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="errorMessage" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="CategoryDisplay">
+    <sequence>
+     <element name="description" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="element" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="errorMessage" nillable="true" type="xsd:string"/>
+     <element name="loginTime" nillable="true" type="xsd:string"/>
+     <element name="rating" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="review" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="reviewerName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="CategoryAll">
+    <sequence>
+     <element name="allreviwerName" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="description" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="element" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="errorMessage" nillable="true" type="xsd:string"/>
+     <element name="loginTime" nillable="true" type="xsd:string"/>
+     <element name="rating" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="review" nillable="true" type="impl:ArrayOf_xsd_string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="deleteCommentsResponse">
+
+      <wsdl:part element="impl:deleteCommentsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteCategoryResponse">
+
+      <wsdl:part element="impl:deleteCategoryResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="showAllCategoryRequest">
+
+      <wsdl:part element="impl:showAllCategory" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteCategoryRequest">
+
+      <wsdl:part element="impl:deleteCategory" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateCategoryRequest">
+
+      <wsdl:part element="impl:updateCategory" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateCommentsResponse">
+
+      <wsdl:part element="impl:updateCommentsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="signInRequest">
+
+      <wsdl:part element="impl:signIn" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addCategoryRequest">
+
+      <wsdl:part element="impl:addCategory" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="homePageRequest">
+
+      <wsdl:part element="impl:homePage" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateCategoryResponse">
+
+      <wsdl:part element="impl:updateCategoryResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateCommentsRequest">
+
+      <wsdl:part element="impl:updateComments" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addCommentsResponse">
+
+      <wsdl:part element="impl:addCommentsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="homePageResponse">
+
+      <wsdl:part element="impl:homePageResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="signUpResponse">
+
+      <wsdl:part element="impl:signUpResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="signInResponse">
+
+      <wsdl:part element="impl:signInResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="signUpRequest">
+
+      <wsdl:part element="impl:signUp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="showAllCategoryResponse">
+
+      <wsdl:part element="impl:showAllCategoryResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="displayCategoryRequest">
+
+      <wsdl:part element="impl:displayCategory" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteCommentsRequest">
+
+      <wsdl:part element="impl:deleteComments" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="displayCategoryResponse">
+
+      <wsdl:part element="impl:displayCategoryResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addCategoryResponse">
+
+      <wsdl:part element="impl:addCategoryResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addCommentsRequest">
+
+      <wsdl:part element="impl:addComments" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Service">
+
+      <wsdl:operation name="updateCategory">
+
+         <wsdl:input message="impl:updateCategoryRequest" name="updateCategoryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateCategoryResponse" name="updateCategoryResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addCategory">
+
+         <wsdl:input message="impl:addCategoryRequest" name="addCategoryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addCategoryResponse" name="addCategoryResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteCategory">
+
+         <wsdl:input message="impl:deleteCategoryRequest" name="deleteCategoryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteCategoryResponse" name="deleteCategoryResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addComments">
+
+         <wsdl:input message="impl:addCommentsRequest" name="addCommentsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addCommentsResponse" name="addCommentsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="signUp">
+
+         <wsdl:input message="impl:signUpRequest" name="signUpRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:signUpResponse" name="signUpResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="homePage">
+
+         <wsdl:input message="impl:homePageRequest" name="homePageRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:homePageResponse" name="homePageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="signIn">
+
+         <wsdl:input message="impl:signInRequest" name="signInRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:signInResponse" name="signInResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="displayCategory">
+
+         <wsdl:input message="impl:displayCategoryRequest" name="displayCategoryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:displayCategoryResponse" name="displayCategoryResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteComments">
+
+         <wsdl:input message="impl:deleteCommentsRequest" name="deleteCommentsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteCommentsResponse" name="deleteCommentsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateComments">
+
+         <wsdl:input message="impl:updateCommentsRequest" name="updateCommentsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateCommentsResponse" name="updateCommentsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="showAllCategory">
+
+         <wsdl:input message="impl:showAllCategoryRequest" name="showAllCategoryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:showAllCategoryResponse" name="showAllCategoryResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServiceSoapBinding" type="impl:Service">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="updateCategory">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateCategoryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateCategoryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addCategory">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addCategoryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addCategoryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteCategory">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteCategoryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteCategoryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addComments">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addCommentsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addCommentsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="signUp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="signUpRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="signUpResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="homePage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="homePageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="homePageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="signIn">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="signInRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="signInResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="displayCategory">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="displayCategoryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="displayCategoryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteComments">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteCommentsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteCommentsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateComments">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateCommentsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateCommentsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="showAllCategory">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="showAllCategoryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="showAllCategoryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServiceService">
+
+      <wsdl:port binding="impl:ServiceSoapBinding" name="Service">
+
+         <wsdlsoap:address location="http://localhost:8080/SimpleMarketPlace/services/Service"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

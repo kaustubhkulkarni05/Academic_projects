@@ -1,0 +1,228 @@
+body {
+  
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.inline-layout {
+margin: -3px;
+}
+
+.picture-container {
+top:10%;
+position: absolute;
+right: 0px;
+width: 600px;
+padding: 0 15px;
+min-height: 1px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+width: 50%;
+margin-top: 117px;
+}
+
+a {
+  color: #ff0000;
+}
+
+div.bs-example
+{
+	margin: 0 auto;
+	margin-left:5%;
+	width: 20%;
+	float : left;
+}
+
+div.product_content
+{
+	margin-left:5%;
+	width:63%;
+}
+
+div.product_content h3 
+{
+	margin :0;
+	margin-bottom:4%;
+}
+
+div.rows-container div.span3
+{
+	margin-right:5%;
+	border: 1px black solid;
+	padding: 2%;
+	margin-bottom: 5%;
+}
+div.rows-container div.span3 p
+{
+	width:68%;
+}
+
+input.quantity
+{
+	width: 10%;
+}
+
+form.afterSignIn
+{
+	width:420px;
+	margin:0 auto;
+	margin-top: 8%;
+}
+
+form.afterSignUp
+{
+	width:420px;
+	margin:0 auto;
+	margin-top: 8%;
+}
+
+div.col-sm-10
+{
+	margin-bottom:10px;
+}
+
+.usernameDiv
+{
+	margin-left: 10%;
+	width:100%;
+}
+
+.usernameDivRight
+{
+	margin-right: 10%;
+	margin-vertical: 10%;
+	width:100%;
+}
+
+.usernameDivLeft
+{
+	margin-right: 40%;
+	width:100%;
+}
+
+div.usernameDiv div.col-sm-10
+{
+	padding-left:0px;
+}
+
+.signIn
+{
+	margin-left : 10%;
+}
+
+.signOut
+{
+	margin-right : 70%;
+	Display:inline;
+}
+
+
+
+.mainpage{
+	background-image: url(arrow.gif);
+background-repeat: no-repeat;
+background-position: 100% .4em;
+padding-right: .6em;
+margin: 1em 0;
+display:inline; 
+float:left;
+	color:red;
+}
+
+.mainpage:after {
+    content:"\a";
+    white-space: pre;
+}
+.app-header {
+position: relative;
+min-width: 990px;
+background: #af0606 url(//stylesheets/yelp.png) no-repeat center;
+background: url((//stylesheets/yelp.png) no-repeat center,-webkit-linear-gradient(#c41200, #af0606);
+background: url((//stylesheets/yelp.png) no-repeat center,-moz-linear-gradient(#c41200, #af0606);
+background: url((//stylesheets/yelp.png) no-repeat center,linear-gradient(#c41200, #af0606);
+border-bottom: 1px solid #853330;
+-webkit-box-shadow: 0 0 5px rgba(78,2,2,0.76);
+box-shadow: 0 0 5px rgba(78,2,2,0.76);
+z-index: 11;
+}
+
+.inline-block {
+display: -moz-inline-stack;
+display: inline-block;
+white-space:nowrap; 
+background-image: url(arrow.gif);
+background-repeat: no-repeat;
+background-position: 100% .4em;
+padding-right: .6em;
+margin: 1em 0;
+display:inline; 
+color :red;
+}
+
+.signuplink
+{
+	margin-left : 35%;
+}
+
+#if-part
+{
+	color : red;
+	margin-left: 26%;
+}
+
+#if-part1
+{
+	color : red;
+	margin-left: 45%;
+	margin-top : 4%;
+}
+
+.signupPage
+{
+	width: 51%;
+	margin: 0 auto;
+	margin-top : 4%;
+}
+
+.addCatalog
+{
+	float: left;
+	border: 1px solid black;
+	margin-left: 10%;	
+}
+
+.labelProduct
+{
+	margin-left: 16px;
+	margin-top: 10px;
+}
+.category_list
+{
+	clear : left;
+}
+
+.category_list1
+{
+	clear: right;
+margin-top: 10px;
+margin-left: 20px;
+}
+
+.common_css
+{
+	clear : both;
+	float: left;	
+}
+
+.checkoutBody
+{
+	margin: 0 auto;
+width: 900px;
+margin-top: 8%;
+}
+
+.lastLogin
+{
+	font-weight: 100;
+font-size: 14px;
+}

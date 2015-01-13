@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>SimpleMarketPlaceClient</display-name>
+  <welcome-file-list>
+    <welcome-file>/View/home.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>signUp</display-name>
+    <servlet-name>signUp</servlet-name>
+    <servlet-class>Servlets.SignUp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>signUp</servlet-name>
+    <url-pattern>/View/signup</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+      <servlet>
+    <description></description>
+    <display-name>restaurantReviews</display-name>
+    <servlet-name>restaurantReviews</servlet-name>
+    <servlet-class>Servlets.ShowAllCategory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>restaurantReviews</servlet-name>
+    <url-pattern>/View/restaurantReviews</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>addComments</display-name>
+    <servlet-name>addComments</servlet-name>
+    <servlet-class>Servlets.AddComment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addComments</servlet-name>
+    <url-pattern>/View/addComments</url-pattern>
+  </servlet-mapping>
+  
+  
+      <servlet>
+    <description></description>
+    <display-name>deleteComment</display-name>
+    <servlet-name>deleteComment</servlet-name>
+    <servlet-class>Servlets.DeleteComment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteComment</servlet-name>
+    <url-pattern>/View/deleteComment</url-pattern>
+  </servlet-mapping>
+  
+        <servlet>
+    <description></description>
+    <display-name>updateComment</display-name>
+    <servlet-name>updateComment</servlet-name>
+    <servlet-class>Servlets.UpdateComment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateComment</servlet-name>
+    <url-pattern>/View/updateComment</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>HomePage</display-name>
+    <servlet-name>HomePage</servlet-name>
+    <servlet-class>Servlets.HomePage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomePage</servlet-name>
+    <url-pattern>/View/home</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>signIn</display-name>
+    <servlet-name>signIn</servlet-name>
+    <servlet-class>Servlets.SignIn</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>signIn</servlet-name>
+    <url-pattern>/View/signIn</url-pattern>
+  </servlet-mapping>
+  
+  
+      <servlet>
+    <description></description>
+    <display-name>addCategory</display-name>
+    <servlet-name>addCategory</servlet-name>
+    <servlet-class>Servlets.AddCategory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addCategory</servlet-name>
+    <url-pattern>/View/addCategory</url-pattern>
+  </servlet-mapping>
+  
+        <servlet>
+    <description></description>
+    <display-name>deleteCategory</display-name>
+    <servlet-name>deleteCategory</servlet-name>
+    <servlet-class>Servlets.DeleteCategory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteCategory</servlet-name>
+    <url-pattern>/View/deleteCategory</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+    <description></description>
+    <display-name>updateCategory</display-name>
+    <servlet-name>updateCategory</servlet-name>
+    <servlet-class>Servlets.UpdateCategory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateCategory</servlet-name>
+    <url-pattern>/View/updateCategory</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+</web-app>
